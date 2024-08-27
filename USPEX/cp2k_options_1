@@ -85,6 +85,6 @@
       BASIS_SET DZVP-MOLOPT-SR-GTH
       POTENTIAL GTH-NLCC-PBE-q4
     &END KIND
-  @INCLUDE 'subsys.uspex'
   &END SUBSYS
+  @include 'subsys.uspex'
 &END FORCE_EVAL

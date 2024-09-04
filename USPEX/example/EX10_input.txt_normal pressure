@@ -1,0 +1,54 @@
+******************************************
+*      TYPE OF RUN AND SYSTEM            *
+******************************************
+USPEX : calculationMethod (USPEX, VCNEB, META)
+310   : calculationType (dimension: 0-3; molecule: 0/1; varcomp: 0/1)
+1     : AutoFrac
+
+% optType
+enthalpy
+% EndOptType
+
+% atomType
+C H
+% EndAtomType
+
+% numSpecies
+8
+% EndNumSpecies
+******************************************
+*               POPULATION               *
+******************************************
+30    : populationSize
+30    : initialPopSize
+30    : numGenerations
+10    : stopCrit 
+******************************************
+*          VARIATION OPERATORS           *
+******************************************
+0.40  : fracGene
+0.20  : fracRand
+0.20  : fracAtomsMut
+0.20  : fracRotMut
+0.00  : fracLatMut
+0.00  : fracPerMut
+****************************************
+*             CONSTRAINTS              *
+****************************************
+% IonDistances
+2.0 1.8
+1.8 1.3
+% EndDistances
+*****************************************
+*   DETAILS OF AB INITIO CALCULATIONS   *
+*****************************************
+% abinitioCode
+6 6 6 6 6 6
+% ENDabinit
+
+% commandExecutable
+sh run_DMACRYS.sh
+% EndExecutable
+
+1     : whichCluster
+0.0   : ExternalPressure

@@ -1,0 +1,40 @@
+META  : calculationMethod (USPEX, VCNEB, META)
+301   : calculationType (dimension: 0-3; molecule: 0/1; varcomp: 0/1)
+*****************************************
+*          CONSTRAINTS                  *
+*****************************************
+% IonDistances
+1.2
+% EndDistances
+
+0.00010 : ExternalPressure
+
+16    : maxAt
+2.0   : minVectorLength 
+8.0   : maxVectorLength
+******************************************
+*               POPULATION               *
+******************************************
+15    : populationSize 
+40    : numGenerations 
+3.0   : mutationDegree
+250.0 : GaussianHeight
+0.3   : GaussianWidth
+2     : FullRelax (1 - Relax the BestStructure at the end of each generation)
+*****************************************
+*   DETAILS OF AB INITIO CALCULATIONS   *
+*****************************************
+% abinitioCode
+1 1 1 (1 1)
+% ENDabinit
+
+% KresolStart
+0.12 0.10 0.09 0.10 0.08
+% Kresolend
+
+% commandExecutable
+mpirun vasp > log
+% EndExecutable
+
+20      : numParallelCalcs
+1       : whichCluster

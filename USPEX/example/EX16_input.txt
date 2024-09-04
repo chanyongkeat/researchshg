@@ -1,0 +1,54 @@
+******************************************
+*      TYPE OF RUN AND SYSTEM            *
+******************************************
+USPEX  : calculationMethod (USPEX, VCNEB, META)
+300    : calculationType (dimension: 0-3; molecule: 0/1; varcomp: 0/1)
+1      : AutoFrac
+
+% optType
+1
+% EndOptType
+
+% atomType
+Sr Ti O
+% EndAtomType
+
+% numSpecies
+10 10 30
+% EndNumSpecies
+******************************************
+*               POPULATION               *
+******************************************
+40    : populationSize
+40    : initialPopSize
+60    : numGenerations
+40    : stopCrit
+0     : reoptOld
+******************************************
+*          VARIATION OPERATORS           *
+******************************************
+0.50  : fracGene
+0.20  : fracRand
+0.20  : fracAtomsMut
+0.20  : fracPerm
+0.00  : fracLatMut
+
+% specificSwaps (write here the swaps you want to allow)
+1 2
+% EndSpecific
+****************************************
+*             CONSTRAINTS              *
+****************************************
+% splitInto
+2 4
+% EndSplitInto
+*****************************************
+*   DETAILS OF AB INITIO CALCULATIONS   *
+*****************************************
+% abinitioCode
+3 3 3 3
+% ENDabinit
+
+% commandExecutable
+gulp < input > output
+% EndExecutable

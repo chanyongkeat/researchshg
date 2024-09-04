@@ -1,0 +1,32 @@
+META  : calculationMethod (USPEX, VCNEB, META)
+300   : calculationType (dimension: 0-3; molecule: 0/1; varcomp: 0/1)
+
+*****************************************
+*                 CELL                  *
+*****************************************
+2.0   : minVectorLength 
+8.0   : maxVectorLength
+
+******************************************
+*               POPULATION               *
+******************************************
+10     : populationSize 
+40     : numGenerations 
+3.0    : mutationDegree
+650.0  : GaussianHeight
+0.4    : GaussianWidth
+2      : FullRelax (1 - Relax the BestStructure at the end of each generation)
+*****************************************
+*   DETAILS OF AB INITIO CALCULATIONS   * 
+*****************************************
+% abinitioCode
+3 3 3 3 (3)
+% ENDabinit
+
+% commandExecutable
+ gulp < input > output
+% EndExecutable
+
+1      : numParallelCalcs
+0      : whichCluster
+0.0    : ExternalPressure (GPa)

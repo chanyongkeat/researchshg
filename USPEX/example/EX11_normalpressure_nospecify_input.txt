@@ -1,0 +1,61 @@
+******************************************
+*      TYPE OF RUN AND SYSTEM            *
+******************************************
+USPEX : calculationMethod (USPEX, VCNEB, META)
+310   : calculationType (dimension: 0-3; molecule: 0/1; varcomp: 0/1)
+1     : AutoFrac
+
+% optType
+enthalpy
+% EndOptType
+
+% numSpecies
+2
+% EndNumSpecies
+
+% atomType
+C O N H
+% EndAtomType
+******************************************
+*               POPULATION               *
+******************************************
+30    : populationSize
+30    : initialPopSize
+30    : numGenerations
+10    : stopCrit
+1     : reoptOld
+******************************************
+*          VARIATION OPERATORS           *
+******************************************
+0.50  : fracGene
+0.30  : fracRand
+0.10  : fracAtomsMut
+0.10  : fracRotMut
+0.00  : fracLatMut
+0.00  : fracPerm
+****************************************
+*             CONSTRAINTS              *
+****************************************
+% IonDistances
+2.0 2.0 2.0 1.5
+2.0 2.0 2.0 1.5
+2.0 2.0 2.0 1.5
+1.5 1.5 1.5 1.2
+% EndDistances
+
+% MolCenters
+4.0
+% EndMol
+*****************************************
+*   DETAILS OF AB INITIO CALCULATIONS   *
+*****************************************
+% abinitioCode 
+12 12 12 12 
+% ENDabinit
+
+% commandExecutable
+bash ./tinker.sh
+% EndExecutable
+
+1     : numParallelCalcs
+0     : whichCluster

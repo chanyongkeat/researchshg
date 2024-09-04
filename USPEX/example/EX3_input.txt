@@ -1,0 +1,57 @@
+******************************************
+*      TYPE OF RUN AND SYSTEM            *
+******************************************
+USPEX : calculationMethod (USPEX, VCNEB, META)
+300   : calculationType (dimension: 0-3; molecule: 0/1; varcomp: 0/1)
+1     : AutoFrac
+
+% symmetries
+16-74
+% endSymmetries
+
+% optType
+1
+% EndOptType
+
+% atomType
+Mg Si O
+% EndAtomType
+
+% numSpecies
+4 4 12
+% EndNumSpecies
+******************************************
+*               POPULATION               *
+******************************************
+30    : populationSize 
+30    : initialPopSize 
+30    : numGenerations 
+20    : stopCrit 
+0     : reoptOld
+******************************************
+*          VARIATION OPERATORS           *
+******************************************
+0.40  : fracGene 
+0.20  : fracRand 
+0.20  : fracAtomsMut 
+0.20  : fracPerm 
+0.00  : fracLatMut
+****************************************
+*             CONSTRAINTS              *
+****************************************
+% Latticevalues 
+2.474 8.121 6.138 90.0 90.0 90.0
+% Endvalues 
+*****************************************
+*   DETAILS OF AB INITIO CALCULATIONS   * 
+*****************************************
+0     : whichCluster 
+1     : numParallelCalcs 
+
+% abinitioCode (which code shall be used for calculation?)
+3 3 3 3 3
+% ENDabinit
+
+% commandExecutable
+gulp < input > output
+% EndExecutable

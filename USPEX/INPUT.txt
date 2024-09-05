@@ -41,10 +41,10 @@ C
 % ENDabinit
 
 % commandExecutable
-sudo docker run -it --rm --shm-size=1g -v $PWD:/mnt -u $(id -u $USER):$(id -g $USER) cp2k/cp2k:2023.2_mpich_generic_psmp mpirun -n 4 -genv OMP_NUM_THREADS=2 cp2k -i cp2k.inp > output
+sudo docker run -it --rm --shm-size=1g -v $PWD:/mnt -u $(id -u $USER):$(id -g $USER) cp2k/cp2k:2023.2_mpich_generic_psmp mpirun -n 2 -genv OMP_NUM_THREADS=2 cp2k -i cp2k.inp > output
 % EndExecutable
 
 0      : whichCluster
-4      : numParallelCalcs
+2      : numParallelCalcs
 0      : ExternalPressure
 

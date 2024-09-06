@@ -13,7 +13,7 @@
     MAX_FORCE 1.0E-03
     !RMS_DR    1.0E-03    
     !RMS_FORCE 1.0E-03
-    MAX_ITER 1000
+    MAX_ITER 200
   &END
   &PRINT
     &TRAJECTORY

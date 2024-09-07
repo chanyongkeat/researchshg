@@ -6,7 +6,6 @@
 &MOTION
   &CELL_OPT
     TYPE DIRECT_CELL_OPT
-    !EXTERNAL_PRESSURE [bar] 1.0
     @INCLUDE 'pressure.uspex'
     PRESSURE_TOLERANCE 100.0
     MAX_DR    1.0E-03
@@ -18,9 +17,20 @@
   &PRINT
     &TRAJECTORY
       LOG_PRINT_KEY .TRUE.
-      FORMAT PDB
-      ADD_LAST NUMERIC
+      FORMAT XYZ
+      &EACH
+         CELL_OPT 1
+      &END EACH
     &END TRAJECTORY
+    &CELL
+     &EACH 
+       CELL_OPT 1
+     &END EACH
+    &END CELL
+    &RESTART OFF
+    &END
+    &RESTART_HISTORY OFF
+    &END
   &END PRINT
 &END MOTION  
 &FORCE_EVAL
@@ -31,7 +41,9 @@
       ADD_LAST NUMERIC
     &END STRESS_TENSOR
     &FORCES
-      ADD_LAST NUMERIC
+      &EACH
+         CELL_OPT 1
+      &END EACH
     &END FORCES
     &GRID_INFORMATION off
     &END GRID_INFORMATION
@@ -43,17 +55,14 @@
     MULTIPLICITY 1
     &MGRID
       CUTOFF 600
-      !REL_CUTOFF 60
+      REL_CUTOFF 60
       NGRIDS 5
     &END MGRID
     &KPOINTS
       SCHEME MONKHORST-PACK 3 3 3
-      !SYMMETRY .TRUE.
     &END KPOINTS
     &QS
       METHOD GPW
-      EPS_DEFAULT 1.0E-8
-      !EPS_PGF_ORB 1.0E-8
     &END QS
     &POISSON
       PERIODIC XYZ
@@ -65,6 +74,10 @@
      &MIXING
        METHOD BROYDEN_MIXING
      &END MIXING
+     &PRINT
+       &RESTART OFF
+       &END
+     &END
     &END SCF
     &XC
       &XC_FUNCTIONAL PBE

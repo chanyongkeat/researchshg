@@ -9,10 +9,10 @@
     !EXTERNAL_PRESSURE [bar] 1.0
     @INCLUDE 'pressure.uspex'
     PRESSURE_TOLERANCE 100.0
-    !MAX_DR    1.0E-03
+    MAX_DR    1.0E-03
     MAX_FORCE 1.0E-03
-    !RMS_DR    1.0E-03    
-    !RMS_FORCE 1.0E-03
+    RMS_DR    1.0E-03    
+    RMS_FORCE 1.0E-03
     MAX_ITER 200
   &END
   &PRINT
@@ -59,9 +59,9 @@
       PERIODIC XYZ
     &END
     &SCF
-      EPS_SCF 1.0E-8
+      EPS_SCF 1.0E-6
       SCF_GUESS ATOMIC
-      MAX_SCF 1000
+      MAX_SCF 200
      &MIXING
        METHOD BROYDEN_MIXING
      &END MIXING

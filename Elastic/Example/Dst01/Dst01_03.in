@@ -3,7 +3,7 @@ Dst01_03
    calculation      = 'relax'
    outdir           = './outdir'
    prefix           = 'sr3pi3'
-   pseudo_dir       = '/home/apparelixetsy/miniconda3/pp'
+   pseudo_dir       = '/home/apparelixetsy/miniconda3/pp/'
    verbosity        = 'low'
    tstress          = .true.
    tprnfor          = .true.

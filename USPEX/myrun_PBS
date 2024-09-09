@@ -1,0 +1,14 @@
+#!/bin/sh
+#PBS -N USPEX-1
+#PBS -A ...
+#PBS -q workq
+#PBS -l walltime=12:00:00
+#PBS -l select=1:ncpus=4:mpiprocs=4
+#PBS -l place=free
+#PBS -V
+
+JOBID=`echo $PBS_JOBID | cut -d '.' -f 1`
+
+cd $PBS_O_WORKDIR
+
+docker run --rm --shm-size=1g -v /home/apparelixetsy/TEST-local-psmp-2024-09-06_04-36-51/ATOM/regtest-1/cp2k_rerun/CalcFold1:/mnt -u 1001:1002 cp2k/cp2k:2023.2_mpich_generic_psmp mpirun -n 2 -genv OMP_NUM_THREADS=2 cp2k -i cp2k.inp > output

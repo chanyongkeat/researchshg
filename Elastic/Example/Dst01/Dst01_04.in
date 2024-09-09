@@ -1,0 +1,50 @@
+Dst01_04
+&CONTROL
+   calculation      = 'relax'
+   outdir           = './outdir'
+   prefix           = 'sr3pi3'
+   pseudo_dir       = '/home/joyeechan1127/q-e-qe-7.2/pp/'
+   verbosity        = 'low'
+   tstress          = .true.
+   tprnfor          = .true.
+ /
+&SYSTEM
+   ibrav            = 0
+   celldm(1)        = 12.344
+   nat              = 7
+   ntyp             = 3
+   ecutwfc          = 30
+   ecutrho          = 220
+   input_dft        = 'pbe'
+   occupations      = 'smearing'
+   smearing         = 'mv'
+   degauss          = 0.005
+   celldm(1)        = 1.8896447467876039
+ /
+&ELECTRONS
+   conv_thr         = 1d-06
+   mixing_beta      = 0.7d0
+ /
+&IONS
+   ion_dynamics     = 'bfgs'
+ /
+ATOMIC_SPECIES
+  Sr 87.62  Sr.pbe-sp-hgh.UPF
+  P 30.973762  P.pbe-hgh.UPF
+  I  126.90447 I.pbe-hgh.UPF
+
+ATOMIC_POSITIONS (crystal)
+   Sr     0.5000000000    0.0000000000    0.0000000000
+   Sr     0.0000000000    0.5000000000    0.0000000000
+   Sr     0.0000000000    0.0000000000    0.5000000000
+   P      0.0000000000    0.0000000000    0.0000000000
+   I      0.0000000000    0.5000000000    0.5000000000
+   I      0.5000000000    0.0000000000    0.5000000000
+   I      0.5000000000    0.5000000000    0.0000000000
+
+K_POINTS {automatic}
+  2 2 2 0 0 0
+CELL_PARAMETERS {alat}
+   1.0246950766    0.0000000000    0.0000000000
+   0.0000000000    1.0246950766    0.0000000000
+   0.0000000000    0.0000000000    1.0246950766

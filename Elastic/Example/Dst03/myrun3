@@ -1,0 +1,23 @@
+#!/bin/sh
+#PBS -N Dst03
+#PBS -A ...
+#PBS -q workq
+#PBS -l walltime=12:00:00
+#PBS -l select=1:ncpus=8:mpiprocs=8
+#PBS -l place=free
+#PBS -V
+
+JOBID=`echo $PBS_JOBID | cut -d '.' -f 1`
+
+cd $PBS_O_WORKDIR
+
+export OMP_NUM_THREADS=2
+mpirun -np 4 pw.x -input Dst03_01.in > Dst03_01.out
+
+mpirun -np 4 pw.x -input Dst03_02.in > Dst03_02.out
+
+mpirun -np 4 pw.x -input Dst03_03.in > Dst03_03.out
+
+mpirun -np 4 pw.x -input Dst03_04.in > Dst03_04.out
+
+mpirun -np 4 pw.x -input Dst03_05.in > Dst03_05.out

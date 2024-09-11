@@ -1,0 +1,6 @@
+name: phonopy
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - phonopy

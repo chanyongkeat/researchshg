@@ -1,0 +1,6 @@
+name: phono3py
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - phono3py

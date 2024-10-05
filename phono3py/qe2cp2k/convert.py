@@ -71,7 +71,7 @@ def convert_qe_to_cp2k(qe_file, cp2k_file):
     print(f"Conversion complete. Output written to {cp2k_file}")
 
 # Example usage
-qe_input_file = r"C:\Users\User\Downloads\Research SHG\convert_qe_cp2k\qe.in"
-cp2k_output_file = r"C:\Users\User\Downloads\Research SHG\convert_qe_cp2k\cp2k.inp"
-
-convert_qe_to_cp2k(qe_input_file, cp2k_output_file)
+for i in range(1, 4):  # This generates numbers from 1 to 4
+    qe_input_file = f"/home/cyk/Phono3py/convert/supercell-{i:05d}.in"  # Formats i as a five-digit number
+    cp2k_output_file = f"/home/cyk/Phono3py/convert/coord{i:05d}.in"  # Formats i as a five-digit number
+    convert_qe_to_cp2k(qe_input_file, cp2k_output_file)

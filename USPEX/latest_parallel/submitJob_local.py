@@ -28,6 +28,10 @@ def submitJob_local(index, commandExecutable):
 #PBS -l select=1:ncpus=4
 #PBS -q workq
 
+JOBID=`echo $PBS_JOBID | cut -d '.' -f 1`
+
+cd $PBS_O_WORKDIR
+
 {}
 '''.format(JOB_NAME, commandExecutable)
 

@@ -36,7 +36,7 @@ N H B O Be F C
 *             CONSTRAINTS              *
 ****************************************
 % Latticevalues 
-4.4418 4.4418 19.9090 90.0 90.0 120.0
+300
 % Endvalues 
 *****************************************
 *   DETAILS OF AB INITIO CALCULATIONS   * 

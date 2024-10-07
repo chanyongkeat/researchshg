@@ -1,0 +1,36 @@
+*********************************************************
+*                                                       *
+  _|    _|     _|_|_|   _|_|_|     _|_|_|_|   _|      _| 
+  _|    _|   _|         _|    _|   _|           _|  _|   
+  _|    _|     _|_|     _|_|_|     _|_|_|         _|     
+  _|    _|         _|   _|         _|           _|  _|   
+    _|_|     _|_|_|     _|         _|_|_|_|   _|      _| 
+*                                                       *
+** USPEX v10.5.2                         Oganov's Lab! **
+*********************************************************
+  
+Structure 1 built with space group 8 (Am)
+Structure 2 built with space group 174 (P-6)
+Structure 3 built with space group 6 (Pm)
+Structure 4 built with space group 156 (P3m1)
+Structure 5 built with space group 107 (I4mm)
+Structure 6 built with space group 144 (P3_1)
+Structure 7 built with space group 35 (Cmm2)
+===== USPEX WARNING @ 11:34:7 07-Oct-2024 ===== 
+Random : Can not randomly generate a structure after 5 minutes. The minimum distance threshold will be lowered by 0.1!
+Random : Please check your IonDistances parameter. 
+
+===== USPEX WARNING @ 11:43:7 07-Oct-2024 ===== 
+Random : Can not randomly generate a structure after 5 minutes. The minimum distance threshold will be lowered by 0.1!
+Random : Please check your IonDistances parameter. 
+
+===== USPEX WARNING @ 11:52:7 07-Oct-2024 ===== 
+Random : Can not randomly generate a structure after 5 minutes. The minimum distance threshold will be lowered by 0.1!
+Random : Please check your IonDistances parameter. 
+
+===== USPEX WARNING @ 12:1:7 07-Oct-2024 ===== 
+Unable to generate a structure after 30000 tries or 15 minutes.
+Plz check the input files. The calculation has to stop.
+Possible reasons:  unreasonably big IonDistances.
+they should be smaller than the real interatomic distances
+but avoid pseudopotential overlap errors.

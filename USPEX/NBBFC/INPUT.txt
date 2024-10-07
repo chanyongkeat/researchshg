@@ -10,7 +10,7 @@ USPEX  : calculationMethod (USPEX, VCNEB, META)
 % EndOptType
 
 % atomType
-N H B O Be F C
+N H B O Be F Cl
 % EndAtomType
 
 % numSpecies
@@ -35,9 +35,7 @@ N H B O Be F C
 ****************************************
 *             CONSTRAINTS              *
 ****************************************
-% symmetries
-5 6 8 25 35 44 79 99 107 144 145 146 149 151 152 155 156 157 160 174 187 189
-% EndSymmetries
+
 
 *****************************************
 *   DETAILS OF AB INITIO CALCULATIONS   * 

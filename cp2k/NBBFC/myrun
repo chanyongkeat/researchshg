@@ -1,5 +1,5 @@
 #!/bin/sh
-#PBS -N {}
+#PBS -N NBBFC
 #PBS -l walltime=12:00:00
 #PBS -l select=1:ncpus=180
 #PBS -q workq

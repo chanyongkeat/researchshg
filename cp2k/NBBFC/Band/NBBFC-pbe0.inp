@@ -33,7 +33,7 @@
   
     &SCF  
       EPS_SCF 1.0E-06  
-      MAX_SCF 50
+      MAX_SCF 200
       !typically need lower threshold to start DIIS with k-points  
       EPS_DIIS 0.05  
       SCF_GUESS RESTART
@@ -41,6 +41,18 @@
     &END SCF  
   
     &XC  
+      &VDW_POTENTIAL
+        DISPERSION_FUNCTIONAL PAIR_POTENTIAL
+        &PAIR_POTENTIAL
+          CALCULATE_C9_TERM .TRUE.
+          PARAMETER_FILE_NAME dftd3.dat
+          REFERENCE_C9_TERM .TRUE.
+          REFERENCE_FUNCTIONAL PBE0
+          R_CUTOFF 16
+          TYPE DFTD3(BJ)
+          VERBOSE_OUTPUT T
+        &END PAIR_POTENTIAL
+      &END VDW_POTENTIAL
       &XC_FUNCTIONAL  
         &PBE  
           SCALE_X 0.75  

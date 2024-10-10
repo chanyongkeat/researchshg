@@ -175,5 +175,10 @@
         &END RESTART
       &END PRINT
     &END SCF
+    &PRINT
+      &MO_MOLDEN #Exporting .molden file containing wavefunction information
+        NDIGITS 9 #Output orbital coefficients if absolute value is larger than 1E-9
+      &END MO_MOLDEN
+    &END PRINT
   &END DFT
 &END FORCE_EVAL

@@ -138,12 +138,12 @@
       &HF
         FRACTION 0.25 #HF composition
         &SCREENING
-          EPS_SCHWARZ 1E-6 #The larger the value, the lower the cost and lower the accuracy
+          EPS_SCHWARZ 1E-8 #The larger the value, the lower the cost and lower the accuracy
           SCREEN_ON_INITIAL_P T #Screening ERI based on initial density matrix, need to provide wavefunction restart file
         &END SCREENING
         &INTERACTION_POTENTIAL
           POTENTIAL_TYPE TRUNCATED
-          CUTOFF_RADIUS  6 #Cutoff radius (Angstrom) for truncated 1/r Coulomb operator
+          CUTOFF_RADIUS  5.8 #Cutoff radius (Angstrom) for truncated 1/r Coulomb operator
         &END INTERACTION_POTENTIAL
         &MEMORY
           MAX_MEMORY 5000 #Memory(MB) per MPI process for calculating HF exchange

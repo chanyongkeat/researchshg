@@ -11,6 +11,7 @@
     STEPS                         10000
     TIMESTEP                      1             
     TEMPERATURE                   300
+    TEMP_TOL                      20
     STEP_START_VAL 0
     &THERMOSTAT
       TYPE  NOSE

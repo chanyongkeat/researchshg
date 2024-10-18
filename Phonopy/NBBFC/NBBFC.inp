@@ -1,0 +1,143 @@
+&GLOBAL
+   PROJECT NBBFC
+   RUN_TYPE ENERGY_FORCE
+   PRINT_LEVEL MEDIUM
+&END GLOBAL
+ 
+&FORCE_EVAL
+  METHOD Quickstep
+  &SUBSYS
+    &CELL
+      ABC [angstrom]  4.479968 4.479968 22.921584
+      PERIODIC XYZ #Direction(s) of applied PBC (geometry aspect)
+      ALPHA_BETA_GAMMA [deg] 90 90 120
+    &END CELL
+    &COORD
+     Be         2.2417533886        3.8753561904        4.6341548864
+     Be         2.2481297136        3.8384875420       18.7193231287
+     Be         2.1857443256        1.2955894846       12.1527701466
+     Be         2.2430506053        1.2872909811        3.5592876914
+     Be         0.0118074795        2.5431886550       19.7932617184
+     Be        -0.0519128790        2.5889749848       11.0841828144
+      B         2.1867435361        3.8829103669       11.6347307586
+      B         2.2496333356        1.2503426329       19.2725831333
+      B         0.0024381705        2.5818039010        4.1144839656
+      O        -0.9090165437        3.8745863509       11.6547170207
+      O         3.7409675916        1.2058729909       11.6573821591
+      O         1.4880293949        2.6884518899       11.6595021810
+      O         3.6339538225        1.2418725458       19.2989908940
+      O         1.5654709367        2.4537634356       19.2925101813
+      O         1.3872099673        2.5724618699        4.1361996005
+      O        -0.6821581483        3.7851066812        4.1392064656
+      F         2.2391202354        3.8790345266        6.2365497132
+     Cl         2.2230794228        3.8573810270       16.6994085334
+      F         2.1799878348        1.2929664903       13.7541917634
+     Cl         2.2526252054        1.2707645687        1.5308945033
+      F         0.0289327562        2.5347678441       21.3969989207
+     Cl        -0.0295797182        2.5841002893        9.0733959096
+      H         2.2245445873        1.2949544741        8.2797891064
+      H         0.8050227181        2.0965264525       14.4633551210
+      H        -0.8962886916        2.0881212614       14.4706955952
+      H        -0.0554404852        3.5645926715       14.4658926155
+      H        -0.0446439477        2.5852905002       15.8325277579
+      H         1.4192244487        3.3380952540       -0.7801539135
+      H         3.0857269180        0.8075374825        6.9241224347
+      H         1.3833321665        0.7956333229        6.9148642293
+      H         2.2262513425        2.2757408176        6.9178817120
+      N         2.2296423730        1.2932241525        7.2530974723
+      N        -0.0470104813        2.5830059865       14.8047012342
+      N         2.2644109096        3.8344958758       -0.4357220863
+      O         3.7823393775        1.3877390479        4.1381369700
+      O        -0.6908172144        3.9348515550       19.2956702454
+      H         3.1173556873        3.3461621856       -0.7713384414
+      H         2.2619224840        4.8143478621       -0.7814771042
+      H         2.2596133956        3.8367085452        0.5932942385
+    &END COORD
+    &KIND N
+      BASIS_SET TZVP-MOLOPT-PBE-GTH-q5
+      POTENTIAL GTH-PBE-q5
+    &END KIND
+    &KIND H
+      BASIS_SET TZVP-MOLOPT-PBE-GTH-q1
+      POTENTIAL GTH-PBE-q1
+    &END KIND
+    &KIND B
+      BASIS_SET TZVP-MOLOPT-PBE-GTH-q3
+      POTENTIAL GTH-PBE-q3
+    &END KIND
+    &KIND O
+      BASIS_SET TZVP-MOLOPT-PBE-GTH-q6
+      POTENTIAL GTH-PBE-q6
+    &END KIND
+    &KIND Be
+      BASIS_SET TZVP-MOLOPT-PBE-GTH-q4
+      POTENTIAL GTH-PBE-q4
+    &END KIND
+    &KIND F
+      BASIS_SET TZVP-MOLOPT-PBE-GTH-q7
+      POTENTIAL GTH-PBE-q7
+    &END KIND
+    &KIND Cl
+      BASIS_SET TZVP-MOLOPT-PBE-GTH-q7
+      POTENTIAL GTH-PBE-q7
+    &END KIND
+  &END SUBSYS
+
+  &DFT
+    BASIS_SET_FILE_NAME  BASIS_MOLOPT_UZH
+    POTENTIAL_FILE_NAME  POTENTIAL
+#   WFN_RESTART_FILE_NAME 4amp34solvent-RESTART.wfn
+    CHARGE    0 #Net charge
+    MULTIPLICITY    1 #Spin multiplicity
+    &QS
+      EPS_DEFAULT 1.0E-12 #Set all EPS_xxx to values such that the energy will be correct up to this value
+    &END QS
+    &POISSON
+      PERIODIC XYZ #Direction(s) of PBC for calculating electrostatics
+      PSOLVER PERIODIC #The way to solve Poisson equation
+    &END POISSON
+    &XC
+      &VDW_POTENTIAL
+        DISPERSION_FUNCTIONAL PAIR_POTENTIAL
+        &PAIR_POTENTIAL
+          CALCULATE_C9_TERM .TRUE.
+          PARAMETER_FILE_NAME dftd3.dat
+          REFERENCE_C9_TERM .TRUE.
+          REFERENCE_FUNCTIONAL PBE
+          R_CUTOFF 16
+          TYPE DFTD3(BJ)
+          VERBOSE_OUTPUT T
+        &END PAIR_POTENTIAL
+      &END VDW_POTENTIAL
+      &XC_FUNCTIONAL PBE
+      &END XC_FUNCTIONAL
+    &END XC
+    &MGRID
+      CUTOFF 600
+      REL_CUTOFF 60
+      NGRIDS 5
+    &END MGRID
+    &SCF
+      MAX_SCF 200
+      EPS_SCF 1.0E-06 #Convergence threshold of density matrix of inner SCF
+#     SCF_GUESS RESTART #Use wavefunction from WFN_RESTART_FILE_NAME file as initial guess
+      &DIAGONALIZATION
+        ALGORITHM STANDARD #Algorithm for diagonalization
+      &END DIAGONALIZATION
+      &MIXING #How to mix old and new density matrices
+        METHOD BROYDEN_MIXING #PULAY_MIXING is also a good alternative
+      &END MIXING
+      ADDED_MOS    300 #Number of virtual MOs to solve
+      &PRINT
+        &RESTART #Note: Use "&RESTART OFF" can prevent generating .wfn file
+          BACKUP_COPIES 0 #Maximum number of backup copies of wfn file. 0 means never
+        &END RESTART
+      &END PRINT
+    &END SCF
+    &PRINT
+      &MO_MOLDEN #Exporting .molden file containing wavefunction information
+        NDIGITS 9 #Output orbital coefficients if absolute value is larger than 1E-9
+      &END MO_MOLDEN
+    &END PRINT
+  &END DFT
+&END FORCE_EVAL

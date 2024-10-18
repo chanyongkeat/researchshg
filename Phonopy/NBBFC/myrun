@@ -1,0 +1,10 @@
+#!/bin/sh
+#PBS -N NBBFC
+#PBS -l walltime=12:00:00
+#PBS -l select=1:ncpus=180
+#PBS -q workq
+
+JOBID=`echo $PBS_JOBID | cut -d '.' -f 1`
+
+cd $PBS_O_WORKDIR
+./cp2k.sh

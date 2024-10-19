@@ -54,37 +54,37 @@
       H         2.2596133956        3.8367085452        0.5932942385
     &END COORD
     &KIND N
-      BASIS_SET TZVP-MOLOPT-PBE-GTH-q5
+      BASIS_SET DZVP-MOLOPT-SR-GTH
       POTENTIAL GTH-PBE-q5
     &END KIND
     &KIND H
-      BASIS_SET TZVP-MOLOPT-PBE-GTH-q1
+      BASIS_SET DZVP-MOLOPT-SR-GTH
       POTENTIAL GTH-PBE-q1
     &END KIND
     &KIND B
-      BASIS_SET TZVP-MOLOPT-PBE-GTH-q3
+      BASIS_SET DZVP-MOLOPT-SR-GTH
       POTENTIAL GTH-PBE-q3
     &END KIND
     &KIND O
-      BASIS_SET TZVP-MOLOPT-PBE-GTH-q6
+      BASIS_SET DZVP-MOLOPT-SR-GTH
       POTENTIAL GTH-PBE-q6
     &END KIND
     &KIND Be
-      BASIS_SET TZVP-MOLOPT-PBE-GTH-q4
+      BASIS_SET DZVP-MOLOPT-SR-GTH
       POTENTIAL GTH-PBE-q4
     &END KIND
     &KIND F
-      BASIS_SET TZVP-MOLOPT-PBE-GTH-q7
+      BASIS_SET DZVP-MOLOPT-SR-GTH
       POTENTIAL GTH-PBE-q7
     &END KIND
     &KIND Cl
-      BASIS_SET TZVP-MOLOPT-PBE-GTH-q7
+      BASIS_SET DZVP-MOLOPT-SR-GTH
       POTENTIAL GTH-PBE-q7
     &END KIND
   &END SUBSYS
 
   &DFT
-    BASIS_SET_FILE_NAME  BASIS_MOLOPT_UZH
+    BASIS_SET_FILE_NAME  BASIS_MOLOPT
     POTENTIAL_FILE_NAME  POTENTIAL
 #   WFN_RESTART_FILE_NAME 4amp34solvent-RESTART.wfn
     CHARGE    0 #Net charge
@@ -117,8 +117,11 @@
       REL_CUTOFF 60
       NGRIDS 5
     &END MGRID
+    &KPOINTS
+      SCHEME MONKHORST-PACK 2 2 1
+    &END KPOINTS
     &SCF
-      MAX_SCF 200
+      MAX_SCF 500
       EPS_SCF 1.0E-06 #Convergence threshold of density matrix of inner SCF
 #     SCF_GUESS RESTART #Use wavefunction from WFN_RESTART_FILE_NAME file as initial guess
       &DIAGONALIZATION
@@ -127,17 +130,12 @@
       &MIXING #How to mix old and new density matrices
         METHOD BROYDEN_MIXING #PULAY_MIXING is also a good alternative
       &END MIXING
-      ADDED_MOS    300 #Number of virtual MOs to solve
+
       &PRINT
         &RESTART #Note: Use "&RESTART OFF" can prevent generating .wfn file
           BACKUP_COPIES 0 #Maximum number of backup copies of wfn file. 0 means never
         &END RESTART
       &END PRINT
     &END SCF
-    &PRINT
-      &MO_MOLDEN #Exporting .molden file containing wavefunction information
-        NDIGITS 9 #Output orbital coefficients if absolute value is larger than 1E-9
-      &END MO_MOLDEN
-    &END PRINT
   &END DFT
 &END FORCE_EVAL

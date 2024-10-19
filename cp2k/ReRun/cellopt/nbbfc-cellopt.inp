@@ -16,7 +16,7 @@
     OPTIMIZER BFGS
     KEEP_SYMMETRY .TRUE.
     KEEP_SPACE_GROUP .TRUE.
-    EPS_SYMMETRY 1.0E-05
+    EPS_SYMMETRY 1.0E-04
   &END
   &PRINT
     &TRAJECTORY
@@ -72,12 +72,15 @@
       PERIODIC XYZ
     &END
     &SCF
-      EPS_SCF 1.0E-7
-      SCF_GUESS ATOMIC
-      MAX_SCF 500
-     &MIXING
-       METHOD BROYDEN_MIXING
-     &END MIXING
+      MAX_SCF 200
+      EPS_SCF 1.0E-06 #Convergence threshold of density matrix of inner SCF
+      &OT
+        MINIMIZER CG
+        PRECONDITIONER FULL_KINETIC
+      &END OT
+      &OUTER_SCF
+        EPS_SCF 1.0e-6
+      &END OUTER_SCF
      &PRINT
        &RESTART OFF
        &END

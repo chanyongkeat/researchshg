@@ -1,0 +1,36 @@
+ +---------------------------- Tip ------------------------------+
+ |    See an example in aspkit/examples/seek_kpath/GaAs_bulk.    |
+ |     The k-path is only for the standardized primtive cell.    |
+ +---------------------------------------------------------------+
+ +-------------------------- Summary ----------------------------+
+                           Prototype: ABCDE2F3G4
+           Total Atoms in Input Cell:  39
+     Lattice Constants in Input Cell:   4.442   4.442  19.909
+        Lattice Angles in Input Cell:  90.000  90.000 120.000
+       Total Atoms in Primitive Cell:  13
+ Lattice Constants in Primitive Cell:   7.115   7.115   7.115
+    Lattice Angles in Primitive Cell:  36.379  36.379  36.379
+                      Crystal System: Trigonal
+                       Crystal Class: 3
+                     Bravais Lattice: hR
+            Extended Bravais Lattice: hR1
+                  Space Group Number: 146
+                         Point Group: 16 [ C3 ]
+                       International: R3
+                 Symmetry Operations:   9
+                    Suggested K-Path: (shown in the next line)
+ [ GAMMA-T-H_2|H_0-L-GAMMA-S_0|S_2-F-GAMMA ]
+ +---------------------------------------------------------------+
+ -->> (01) Written HIGH_SYMMETRY_POINTS File for Reference.
+ -->> (02) Written PRIMCELL.vasp file.
+ -->> (03) Written KPATH.in File for Band-Structure Calculation.
+ o----------------------------WARNING----------------------------o
+ | Do NOT forget to copy PRIMCELL.vasp to POSCAR unless you know |
+ |   what you are doing. Otherwise you might get wrong results!  |
+ o---------------------------------------------------------------o
+ +-------------------------- Summary ----------------------------+
+ POTCAR Type: PBE
+ Number of Elements: 7
+ Error: Failed to read ~/POTCAR/PBE/Be/POTCAR
+ Please check the setting of PBE_PATH variable in ~/.vaspkit file.
+ +---------------------------------------------------------------+

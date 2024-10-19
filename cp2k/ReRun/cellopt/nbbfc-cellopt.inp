@@ -75,9 +75,7 @@
       EPS_SCF 1.0E-6
       SCF_GUESS ATOMIC
       MAX_SCF 500
-     &MIXING
-       METHOD BROYDEN_MIXING
-     &END MIXING
+      CHOLESKY OFF
      &PRINT
        &RESTART OFF
        &END

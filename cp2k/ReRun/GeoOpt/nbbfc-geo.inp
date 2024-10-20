@@ -13,9 +13,6 @@
     MAX_FORCE 1.0E-04
     RMS_DR    1.0E-03
     RMS_FORCE 1.0E-04
-    SPGR_PRINT_ATOMS .TRUE.
-    KEEP_SPACE_GROUP .TRUE.
-    EPS_SYMMETRY 1.0E-05
   &END GEO_OPT
 &END MOTION
 
@@ -35,6 +32,7 @@
     &SCF
       MAX_SCF 250
       EPS_SCF 1.0E-06 #Convergence threshold of density matrix of inner SCF
+      IGNORE_CONVERGENCE_FAILURE .TRUE.
 #     SCF_GUESS RESTART #Use wavefunction from WFN_RESTART_FILE_NAME file as initial guess
       &DIAGONALIZATION
         ALGORITHM STANDARD #Algorithm for diagonalization

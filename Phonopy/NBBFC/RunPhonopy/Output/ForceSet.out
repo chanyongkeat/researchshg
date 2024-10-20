@@ -1,0 +1,73 @@
+(/home/apparelixetsy/miniconda3/env) apparelixetsy@supercomputer:~/NBBFC_phonon_2nd$ phonopy --cp2k -f NBBFC-supercell-{001..026}-forces-1_0.xyz
+        _
+  _ __ | |__   ___  _ __   ___   _ __  _   _
+ | '_ \| '_ \ / _ \| '_ \ / _ \ | '_ \| | | |
+ | |_) | | | | (_) | | | | (_) || |_) | |_| |
+ | .__/|_| |_|\___/|_| |_|\___(_) .__/ \__, |
+ |_|                            |_|    |___/
+                                      2.28.0
+
+Compiled with OpenMP support (max 4 threads).
+Python version 3.12.7
+Spglib version 2.5.0
+
+Calculator interface: cp2k
+Displacements were read from "phonopy_disp.yaml".
+1. Drift force of "NBBFC-supercell-001-forces-1_0.xyz" to be subtracted
+ -0.00000003   0.00000003  -0.00001104
+2. Drift force of "NBBFC-supercell-002-forces-1_0.xyz" to be subtracted
+ -0.00000002   0.00000004  -0.00001104
+3. Drift force of "NBBFC-supercell-003-forces-1_0.xyz" to be subtracted
+ -0.00000002   0.00000003  -0.00001104
+4. Drift force of "NBBFC-supercell-004-forces-1_0.xyz" to be subtracted
+ -0.00000003   0.00000004  -0.00001104
+5. Drift force of "NBBFC-supercell-005-forces-1_0.xyz" to be subtracted
+ -0.00000002   0.00000004  -0.00001104
+6. Drift force of "NBBFC-supercell-006-forces-1_0.xyz" to be subtracted
+ -0.00000003   0.00000003  -0.00001104
+7. Drift force of "NBBFC-supercell-007-forces-1_0.xyz" to be subtracted
+ -0.00000003   0.00000004  -0.00001104
+8. Drift force of "NBBFC-supercell-008-forces-1_0.xyz" to be subtracted
+ -0.00000002   0.00000003  -0.00001104
+9. Drift force of "NBBFC-supercell-009-forces-1_0.xyz" to be subtracted
+ -0.00000007   0.00000011  -0.00001294
+10. Drift force of "NBBFC-supercell-010-forces-1_0.xyz" to be subtracted
+  0.00000003   0.00000007  -0.00001002
+11. Drift force of "NBBFC-supercell-011-forces-1_0.xyz" to be subtracted
+ -0.00000007   0.00000003  -0.00001293
+12. Drift force of "NBBFC-supercell-012-forces-1_0.xyz" to be subtracted
+  0.00000004   0.00000004  -0.00000902
+13. Drift force of "NBBFC-supercell-013-forces-1_0.xyz" to be subtracted
+ -0.00000003   0.00000004  -0.00001103
+14. Drift force of "NBBFC-supercell-014-forces-1_0.xyz" to be subtracted
+ -0.00000002   0.00000003  -0.00001104
+15. Drift force of "NBBFC-supercell-015-forces-1_0.xyz" to be subtracted
+ -0.00000001   0.00000004  -0.00001092
+16. Drift force of "NBBFC-supercell-016-forces-1_0.xyz" to be subtracted
+ -0.00000006   0.00000003  -0.00001119
+17. Drift force of "NBBFC-supercell-017-forces-1_0.xyz" to be subtracted
+ -0.00000204   0.00000004  -0.00001104
+18. Drift force of "NBBFC-supercell-018-forces-1_0.xyz" to be subtracted
+  0.00000083   0.00000043  -0.00001092
+19. Drift force of "NBBFC-supercell-019-forces-1_0.xyz" to be subtracted
+  0.00000010  -0.00000067  -0.00001091
+20. Drift force of "NBBFC-supercell-020-forces-1_0.xyz" to be subtracted
+ -0.00000103   0.00000226  -0.00001111
+21. Drift force of "NBBFC-supercell-021-forces-1_0.xyz" to be subtracted
+ -0.00000023   0.00000025  -0.00001336
+22. Drift force of "NBBFC-supercell-022-forces-1_0.xyz" to be subtracted
+ -0.00000013   0.00000014  -0.00000775
+23. Drift force of "NBBFC-supercell-023-forces-1_0.xyz" to be subtracted
+ -0.00000083   0.00000076  -0.00001767
+24. Drift force of "NBBFC-supercell-024-forces-1_0.xyz" to be subtracted
+  0.00000073   0.00000073  -0.00000416
+25. Drift force of "NBBFC-supercell-025-forces-1_0.xyz" to be subtracted
+ -0.00000003   0.00000003  -0.00001103
+26. Drift force of "NBBFC-supercell-026-forces-1_0.xyz" to be subtracted
+ -0.00000003   0.00000004  -0.00001105
+"FORCE_SETS" has been created.
+                 _
+   ___ _ __   __| |
+  / _ \ '_ \ / _` |
+ |  __/ | | | (_| |
+  \___|_| |_|\__,_|

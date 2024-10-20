@@ -123,7 +123,6 @@
     &SCF
       MAX_SCF 500
       EPS_SCF 1.0E-06 #Convergence threshold of density matrix of inner SCF
-      IGNORE_CONVERGENCE_FAILURE .TRUE.
 #     SCF_GUESS RESTART #Use wavefunction from WFN_RESTART_FILE_NAME file as initial guess
       &DIAGONALIZATION
         ALGORITHM STANDARD #Algorithm for diagonalization

@@ -1,0 +1,20 @@
+     Energy  ---=>  1
+     Stress  ---=>  2
+>>>> Please choose the method of the calculation (choose 1 or 2): 1
+
+     2nd  ---=>  2
+     3rd  ---=>  3
+>>>> Please choose the order of the elastic constant (choose 2 or 3): 2
+
+>>>> Please enter the name of the Quantum-ESPRESSO input file: NBBFC_QE.in
+
+     Number and name of space group: 146 (R 3) [h axes]
+     Rhombohedral II structure in the Laue classification.
+     This structure has 7 independent second-order elastic constants.
+
+>>>> Please enter the maximum Lagrangian strain
+     The suggested value is between 0.030 and 0.150: 0.04
+     The maximum Lagrangian strain is 0.04
+
+>>>> Please enter the number of the distorted structures [odd number > 4]: 41
+     The number of the distorted structures is 41

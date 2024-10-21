@@ -9,7 +9,8 @@
     nat   = 27
     ntyp  = 5
 /
-
+&electrons
+/
 ATOMIC_SPECIES
 Be   1.00000  unknown
 O   15.99940  O.pbe-rrkjus.UPF

@@ -1,24 +1,28 @@
-&CONTROL
-    pseudo_dir = "C:\Users\User\.burai\.pseudopot"
+&control
+ calculation= 'scf'
+ prefix= 'BPOSCAR_2nd'
+ pseudo_dir= './'
 /
-
-&SYSTEM
-    a     =  4.42700e+00
-    c     =  1.87440e+01
-    ibrav = 4
-    nat   = 27
-    ntyp  = 5
+&system
+ ibrav= 0
+ nat=    27
+ ntyp=    7
+ ecutwfc= 44.0
 /
 &electrons
 /
+CELL_PARAMETERS angstrom
+    4.42700000    0.00000000    0.00000000
+   -2.21350000    3.83389446    0.00000000
+    0.00000000    0.00000000   18.74400000
 ATOMIC_SPECIES
-Be   1.00000  unknown
-O   15.99940  O.pbe-rrkjus.UPF
-K    1.00000  unknown
-F    18.99840  F.pbe-n-rrkjus_psl.1.0.0.UPF
-B    1.00000  unknown
+Be   9.0122  Pseudopotential_file
+B   10.8110  Pseudopotential_file
+K   14.0067  Pseudopotential_file
+O   15.9994  Pseudopotential_file
+F   18.9984  Pseudopotential_file
 
-ATOMIC_POSITIONS {crystal}
+ATOMIC_POSITIONS crystal
 Be    0.000000   0.000000   0.802600
 Be    0.000000   0.000000   0.197400
 Be    0.666667   0.333333   0.135933
@@ -47,3 +51,5 @@ B     0.000000   0.000000   0.500000
 B     0.666667   0.333333   0.833333
 B     0.333333   0.666667   0.166667
 
+K_POINTS automatic
+3 3 3 0 0 0

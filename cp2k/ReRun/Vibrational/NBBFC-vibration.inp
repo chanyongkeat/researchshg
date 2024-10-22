@@ -1,0 +1,181 @@
+&GLOBAL
+  PROJECT NBBFC
+  PRINT_LEVEL MEDIUM
+  RUN_TYPE VIBRATIONAL_ANALYSIS
+&END GLOBAL
+
+&FORCE_EVAL
+  METHOD Quickstep
+  &SUBSYS
+    &CELL
+      A     4.4799680726515998    0.0000000000000000    0.0000000000000000
+      B    -2.2399840363257999    3.8797661590594950    0.0000000000000000
+      C     0.0000000000000000    0.0000000000000000   22.9215831799999954
+      PERIODIC XYZ #Direction(s) of applied PBC (geometry aspect)
+    &END CELL
+    &COORD
+      SCALED
+      H           0.1279078900000000  0.8748227900000002  0.9673648300000002
+      H           0.7469149000000002  0.8720921100000001  0.9673648300000002
+      H           0.1251772099999998  0.2530850999999998  0.9673648300000002
+      H           0.3333333333333333  0.6666666666666666  0.6936159400000000
+      H           0.7945745566666667  0.2081561233333336  0.3006981633333334
+      H           0.4135815666666667  0.2054254433333333  0.3006981633333334
+      H           0.7918438766666664  0.5864184333333331  0.3006981633333334
+      H           0.0000000000000000  0.0000000000000000  0.0269492733333334
+      H           0.4612412233333333  0.5414894566666668  0.6340314966666667
+      H           0.0802482333333334  0.5387587766666666  0.6340314966666667
+      H           0.4585105433333331  0.9197517666666665  0.6340314966666667
+      H           0.6666666666666666  0.3333333333333333  0.3602826066666667
+      Be          0.3333333333333333  0.6666666666666666  0.8662288166666667
+      Be          0.0000000000000000  0.0000000000000000  0.8194366533333335
+      Be          0.0000000000000000  0.0000000000000000  0.1995621500000000
+      Be          0.6666666666666666  0.3333333333333333  0.1527699866666667
+      Be          0.6666666666666666  0.3333333333333333  0.5328954833333333
+      Be          0.3333333333333333  0.6666666666666666  0.4861033200000002
+      B           0.6666666666666666  0.3333333333333333  0.8435505866666668
+      B           0.3333333333333333  0.6666666666666666  0.1768839200000001
+      B           0.0000000000000000  0.0000000000000000  0.5102172533333333
+      N           0.0000000000000000  0.0000000000000000  0.9821069900000001
+      N           0.6666666666666666  0.3333333333333333  0.3154403233333334
+      N           0.3333333333333333  0.6666666666666666  0.6487736566666666
+      O           0.9746018933333334  0.3312258533333335  0.8445476700000001
+      O           0.6687741466666666  0.6433760399999999  0.8445476700000001
+      O           0.3566239600000001  0.0253981066666666  0.8445476700000001
+      O           0.6412685599999999  0.6645591866666668  0.1778810033333333
+      O           0.3354408133333333  0.9767093733333332  0.1778810033333333
+      O           0.0232906266666668  0.3587314400000000  0.1778810033333333
+      O           0.3079352266666666  0.9978925200000002  0.5112143366666668
+      O           0.0021074799999998  0.3100427066666667  0.5112143366666668
+      O           0.6899572933333333  0.6920647733333333  0.5112143366666668
+      F           0.3333333333333333  0.6666666666666666  0.9361374733333334
+      F           0.0000000000000000  0.0000000000000000  0.2694708066666667
+      F           0.6666666666666666  0.3333333333333333  0.6028041399999999
+      Cl          0.0000000000000000  0.0000000000000000  0.7313224166666668
+      Cl          0.6666666666666666  0.3333333333333333  0.0646557500000000
+      Cl          0.3333333333333333  0.6666666666666666  0.3979890833333335
+    &END COORD
+    &KIND N
+      BASIS_SET DZVP-MOLOPT-SR-GTH
+      POTENTIAL GTH-PBE-q5
+    &END KIND
+    &KIND H
+      BASIS_SET DZVP-MOLOPT-SR-GTH
+      POTENTIAL GTH-PBE-q1
+    &END KIND
+    &KIND B
+      BASIS_SET DZVP-MOLOPT-SR-GTH
+      POTENTIAL GTH-PBE-q3
+    &END KIND
+    &KIND O
+      BASIS_SET DZVP-MOLOPT-SR-GTH
+      POTENTIAL GTH-PBE-q6
+    &END KIND
+    &KIND Be
+      BASIS_SET DZVP-MOLOPT-SR-GTH
+      POTENTIAL GTH-PBE-q4
+    &END KIND
+    &KIND F
+      BASIS_SET DZVP-MOLOPT-SR-GTH
+      POTENTIAL GTH-PBE-q7
+    &END KIND
+    &KIND Cl
+      BASIS_SET DZVP-MOLOPT-SR-GTH
+      POTENTIAL GTH-PBE-q7
+    &END KIND
+  &END SUBSYS
+
+  &DFT
+    BASIS_SET_FILE_NAME  BASIS_MOLOPT
+    POTENTIAL_FILE_NAME  POTENTIAL
+#   WFN_RESTART_FILE_NAME POSCAR-RESTART.wfn
+    CHARGE    0 #Net charge
+    MULTIPLICITY    1 #Spin multiplicity
+    &QS
+      EPS_DEFAULT 1.0E-14 #Set all EPS_xxx to values such that the energy will be correct up to this value
+    &END QS
+    &POISSON
+      PERIODIC XYZ #Direction(s) of PBC for calculating electrostatics
+      PSOLVER PERIODIC #The way to solve Poisson equation
+    &END POISSON
+    &XC
+      &VDW_POTENTIAL
+        DISPERSION_FUNCTIONAL PAIR_POTENTIAL
+        &PAIR_POTENTIAL
+          CALCULATE_C9_TERM .TRUE.
+          PARAMETER_FILE_NAME dftd3.dat
+          REFERENCE_C9_TERM .TRUE.
+          REFERENCE_FUNCTIONAL PBE
+          R_CUTOFF 16
+          TYPE DFTD3(BJ)
+          VERBOSE_OUTPUT T
+        &END PAIR_POTENTIAL
+      &END VDW_POTENTIAL
+      &XC_FUNCTIONAL PBE
+      &END XC_FUNCTIONAL
+    &END XC
+    &MGRID
+      CUTOFF 600
+      REL_CUTOFF 60
+      NGRIDS 5
+    &END MGRID
+    &KPOINTS
+      SCHEME MONKHORST-PACK 8 8 2
+    &END KPOINTS
+    
+    &SCF
+      MAX_SCF 250
+      EPS_SCF 1.0E-07 #Convergence threshold of density matrix of inner SCF
+#     SCF_GUESS RESTART #Use wavefunction from WFN_RESTART_FILE_NAME file as initial guess
+#     IGNORE_CONVERGENCE_FAILURE #Continue calculation even if SCF not converged, works for version >= 2024.1
+      &DIAGONALIZATION
+        ALGORITHM STANDARD #Algorithm for diagonalization
+      &END DIAGONALIZATION
+      &MIXING #How to mix old and new density matrices
+        METHOD BROYDEN_MIXING #PULAY_MIXING is also a good alternative
+        ALPHA 0.4 #Default. Mixing 40% of new density matrix with the old one
+        NBROYDEN 8 #Default is 4. Number of previous steps stored for the actual mixing scheme
+      &END MIXING
+      &PRINT
+        &RESTART OFF #Do not generate wfn file to suppress meaningless I/O cost
+        &END RESTART
+      &END PRINT
+    &END SCF
+    &PRINT
+      &MOMENTS
+        PERIODIC T #Use Berry phase formula (T) or simple operator (F), the latter normally applies to isolated systems
+      &END MOMENTS
+    &END PRINT
+  &END DFT
+  &PROPERTIES
+    &LINRES #Activate linear response calculation
+      PRECONDITIONER FULL_ALL #Preconditioner for conjugate gradient minimization
+      EPS 1E-6 #Target accuracy for the convergence of the conjugate gradient
+      &POLAR
+        DO_RAMAN T #Compute the electric-dipole--electric-dipole polarizability
+        PERIODIC_DIPOLE_OPERATOR T #Type of dipole operator: Berry phase(T) or Local(F)
+      &END POLAR
+    &END LINRES
+  &END PROPERTIES
+&END FORCE_EVAL
+
+&MOTION
+  &PRINT
+    &RESTART
+      BACKUP_COPIES 0 #Maximum number of backing up restart file, 0 means never
+    &END RESTART
+  &END PRINT
+&END MOTION
+&VIBRATIONAL_ANALYSIS
+  DX 0.01 #Step size of finite difference. This is default (Bohr)
+  NPROC_REP 1 #Number of processors to be used per replica. This is default
+  TC_PRESSURE 101325 #1 atm. Pressure for calculate thermodynamic data (Pa)
+  TC_TEMPERATURE 298.15 #Temperature for calculate thermodynamic data (K)
+  THERMOCHEMISTRY #Print thermochemistry information (only valid for isolated systems)
+  INTENSITIES T #Calculate IR/Raman intensities
+  FULLY_PERIODIC T #Avoiding to project out rotation component from Hessian matrix
+  &PRINT
+    &MOLDEN_VIB #Output .mol (Molden file) for visualizing vibrational modes
+    &END MOLDEN_VIB
+  &END PRINT
+&END VIBRATIONAL_ANALYSIS

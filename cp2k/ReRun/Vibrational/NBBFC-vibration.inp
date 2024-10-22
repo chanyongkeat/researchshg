@@ -168,7 +168,7 @@
 &END MOTION
 &VIBRATIONAL_ANALYSIS
   DX 0.01 #Step size of finite difference. This is default (Bohr)
-  NPROC_REP 1 #Number of processors to be used per replica. This is default
+  NPROC_REP 10 #Number of processors to be used per replica. This is default
   TC_PRESSURE 101325 #1 atm. Pressure for calculate thermodynamic data (Pa)
   TC_TEMPERATURE 298.15 #Temperature for calculate thermodynamic data (K)
   INTENSITIES T #Calculate IR/Raman intensities

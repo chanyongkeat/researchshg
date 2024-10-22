@@ -171,7 +171,6 @@
   NPROC_REP 1 #Number of processors to be used per replica. This is default
   TC_PRESSURE 101325 #1 atm. Pressure for calculate thermodynamic data (Pa)
   TC_TEMPERATURE 298.15 #Temperature for calculate thermodynamic data (K)
-  THERMOCHEMISTRY #Print thermochemistry information (only valid for isolated systems)
   INTENSITIES T #Calculate IR/Raman intensities
   FULLY_PERIODIC T #Avoiding to project out rotation component from Hessian matrix
   &PRINT

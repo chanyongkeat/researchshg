@@ -123,10 +123,7 @@
       REL_CUTOFF 60
       NGRIDS 5
     &END MGRID
-    &KPOINTS
-      SCHEME MONKHORST-PACK 8 8 2
-    &END KPOINTS
-    
+
     &SCF
       MAX_SCF 250
       EPS_SCF 1.0E-07 #Convergence threshold of density matrix of inner SCF

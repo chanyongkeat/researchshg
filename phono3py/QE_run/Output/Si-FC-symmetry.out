@@ -1,0 +1,44 @@
+        _                      _____
+  _ __ | |__   ___  _ __   ___|___ / _ __  _   _
+ | '_ \| '_ \ / _ \| '_ \ / _ \ |_ \| '_ \| | | |
+ | |_) | | | | (_) | | | | (_) |__) | |_) | |_| |
+ | .__/|_| |_|\___/|_| |_|\___/____/| .__/ \__, |
+ |_|                                |_|    |___/ 
+                                       3.5.2
+
+-------------------------[time 2024-10-23 16:19:22]-------------------------
+Compiled with OpenMP support (max 4 threads).
+Python version 3.12.7
+Spglib version 2.5.0
+----------------------------- General settings -----------------------------
+HDF5 data compression filter: gzip
+Crystal structure was read from "phono3py_disp.yaml" in qe unit.
+Supercell (dim): [2 2 2]
+Primitive matrix:
+  [0.  0.5 0.5]
+  [0.5 0.  0.5]
+  [0.5 0.5 0. ]
+Spacegroup: Fd-3m (227)
+Use -v option to watch primitive cell, unit cell, and supercell structures.
+----------------------------- Force constants ------------------------------
+Imposing translational and index exchange symmetry to fc2: True
+Imposing translational and index exchange symmetry to fc3: True
+Sets of supercell forces were read from "FORCES_FC3".
+Displacement dataset for fc3 was read from "FORCES_FC3".
+Displacements and forces were converted from qe unit to A and eV/A.
+Computing fc3[ 1, x, x ] using numpy.linalg.pinv.
+One displacement (in Angstrom):
+    [ 0.0318  0.0000  0.0000]
+Expanding fc3.
+Writing fc3 to "fc3.hdf5".
+Max drift of fc3: -0.000000 (xyz) -0.000000 (yxz) -0.000000 (yzx)
+Writing fc2 to "fc2.hdf5".
+Max drift of fc2: -0.000000 (yy) -0.000000 (yy)
+----------- None of ph-ph interaction calculation was performed. -----------
+Summary of calculation was written in "phono3py.yaml".
+-------------------------[time 2024-10-23 16:19:25]-------------------------
+                 _
+   ___ _ __   __| |
+  / _ \ '_ \ / _` |
+ |  __/ | | | (_| |
+  \___|_| |_|\__,_|

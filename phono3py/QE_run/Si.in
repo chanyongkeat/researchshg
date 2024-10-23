@@ -1,6 +1,6 @@
  &control
     calculation = 'scf'
-    pseudo_dir = '/home/apparelixetsy/Si-phonopy-output/pp/'
+    pseudo_dir = '/home/apparelixetsy/Si-phonon-output/pp/'
     tprnfor = .true.
     tstress = .true.
  /
@@ -8,10 +8,6 @@
     ibrav = 0
     nat = 8
     ntyp = 1
-    occupations = 'smearing'
-    smearing = 'gaussian'
-    degauss = 0.01
-    ecutwfc = 50.0
  /
  &electrons
     diagonalization = 'david'

@@ -1,0 +1,7 @@
+ &inputph
+  tr2_ph = 1.0d-14,
+  epsil = .true.
+  reduce_io = .true. 
+  nmix_ph = 10
+ /
+0 0 0

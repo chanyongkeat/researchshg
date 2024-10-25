@@ -1,0 +1,41 @@
+        _
+  _ __ | |__   ___  _ __   ___   _ __  _   _
+ | '_ \| '_ \ / _ \| '_ \ / _ \ | '_ \| | | |
+ | |_) | | | | (_) | | | | (_) || |_) | |_| |
+ | .__/|_| |_|\___/|_| |_|\___(_) .__/ \__, |
+ |_|                            |_|    |___/
+                                      2.28.0
+
+Compiled with OpenMP support (max 4 threads).
+Python version 3.12.7
+Spglib version 2.5.0
+
+"band.conf" was read as phonopy configuration file.
+Crystal structure was read from "POSCAR".
+Unit of length: angstrom
+Band structure mode
+Settings:
+  Non-analytical term correction (NAC): on
+  Supercell: [2 2 2]
+  Primitive matrix (Auto):
+    [0.  0.5 0.5]
+    [0.5 0.  0.5]
+    [0.5 0.5 0. ]
+Spacegroup: Fd-3m (227)
+Number of symmetry operations in supercell: 1536
+Use -v option to watch primitive cell, unit cell, and supercell structures.
+
+NAC parameters were read from "BORN".
+Force constants are read from "force_constants.hdf5".
+Force constants format was transformed to compact format.
+Array shape of force constants: (2, 64, 3, 3)
+
+Reciprocal space paths in reduced coordinates:
+[ 0.000  0.000  0.000] --> [ 0.500  0.500  0.500]
+
+Summary of calculation was written in "phonopy.yaml".
+                 _
+   ___ _ __   __| |
+  / _ \ '_ \ / _` |
+ |  __/ | | | (_| |
+  \___|_| |_|\__,_|

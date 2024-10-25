@@ -15,8 +15,8 @@ for idx, energy in enumerate(energy_values):
     # Generate the output filename based on the index
     output_filename = os.path.join(current_dir, f'Dst01_{idx+1:02d}.out')
     
-    # Write the energy value in the desired format
+    # Write the energy value in the desired format with 'Ry'
     with open(output_filename, 'w') as output_file:
-        output_file.write(f"!    total energy = {energy}\n")
+        output_file.write(f"!    total energy = {energy} Ry\n")
 
-    print(f"Energy value {energy} written to {output_filename}")
+    print(f"Energy value {energy} Ry written to {output_filename}")

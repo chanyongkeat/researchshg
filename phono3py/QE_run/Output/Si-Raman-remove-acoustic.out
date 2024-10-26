@@ -1,0 +1,8 @@
+Frequencies and eigenvectors read from "mesh.hdf5"
+Structure read from "phonopy.yaml"
+Atomic masses read from "phonopy.yaml"
+
+Irreducible representations read from "irreps.yaml"
+
+INFO: Automatically excluding bands 2, 3, 1 from displacement set as these appear to be acoustic modes (to override use --raman-bands).
+INFO: Automatically excluding band(s) 1, 2, 3 from displacement set as these appear to be Raman inactive (to override use --raman-bands).

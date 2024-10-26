@@ -1,7 +1,8 @@
 &control
  calculation= 'scf'
- prefix= 'BPOSCAR_2nd'
  pseudo_dir= './'
+ tprnfor = .true.
+ tstress = .true.
 /
 &system
  ibrav= 0

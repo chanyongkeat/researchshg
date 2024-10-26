@@ -18,3 +18,6 @@
  /
 K_POINTS automatic
  2 2 2  1 1 1
+ 
+ ATOMIC_SPECIES
+ Si   28.08550   Si.pbe-n-kjpaw_psl.0.1.UPF

@@ -1,0 +1,75 @@
+usage: phonopy-raman [-h] [--mesh-yaml <file_path>] [--mesh-hdf5 <file_path>] [--phonopy-yaml <file_path>] [-c <file_path>]
+                     [--irreps-yaml <file_path>] [--linewidth-hdf5 <file_path>] [--linewidth-temperature <temperature>] [-d]
+                     [-r <file> [<file> ...]] [-p] [--amplitude <step>] [--step-type < delta_q | max_r | norm_x >] [--bands <band_indices>]
+                     [--spectrum-range <min> <max>] [--spectrum-resolution <resolution>] [--linewidth <linewidth>]
+                     [--instrument-broadening-width <broadening>] [--instrument-broadening-shape <lineshape>] [--surface <h> <k> <l>]
+                     [--theta <theta> [<theta_2>, ...]] [--theta-step <step>] [--incident-pol <pol>] [--scattered-pol <pol>] [-o <prefix>]
+                     [--data-format dat | csv] [--output-units < thz | inv_cm | mev | um >]
+
+Simulate Raman spectra starting from a Phonopy calculation
+
+options:
+  -h, --help            show this help message and exit
+
+Input files:
+  --mesh-yaml <file_path>
+                        mesh.yaml file to read Gamma-point frequencies/eigenvectors and structure, if present, from (default: mesh.yaml)
+  --mesh-hdf5 <file_path>
+                        mesh.hdf5 file to read Gamma-point frequencies and eigenvectors from (default: mesh.hdf5)
+  --phonopy-yaml <file_path>
+                        phonopy.yaml file to read structure and atomic masses from (optional; default: phonopy.yaml)
+  -c <file_path>, --cell <file_path>
+                        Input file to read structure from (optional; VASP 5.x POSCAR files only; default: POSCAR)
+  --irreps-yaml <file_path>
+                        irreps.yaml file to read if using the --irreps argument (default: irreps.yaml)
+
+Linewidths:
+  --linewidth-hdf5 <file_path>
+                        Phono3py HDF5 file to read mode linewidths from
+  --linewidth-temperature <temperature>
+                        Temperature to read linewidths at (default: 300 K)
+
+Raman calculations:
+  -d, --create-disp     Generate displaced structures for a Raman calculation
+  -r <file> [<file> ...], --read <file> [<file> ...]
+                        Collect dielectric constants from a sequence of input files
+  -p, --post-process    Post-process a Raman calculation
+  --amplitude <step>    Step size for generating displaced structures (default: 0.01)
+  --step-type < delta_q | max_r | norm_x >
+                        Step size is given in normal-mode amplitude in sqrt(amu) Ang ('delta_q'), max. Cartesian displacement in Ang ('max_r')
+                        or eigendisplacement norm ('norm_x'); default: 'norm_x'
+  --bands <band_indices>
+                        Band indices to generate displacements for (1-3n_a, default: all except acoustic modes)
+
+Spectrum simulation:
+  --spectrum-range <min> <max>
+                        Frequency range of simulated spectrum in --output-units (default: automatically determined)
+  --spectrum-resolution <resolution>
+                        Frequency resolution of simulated spectrum in --output-units (default: >1,000 points or minimum spacing of 1)
+  --linewidth <linewidth>
+                        Uniform mode linewidth in --output-units (default: 0.5 THz ~= 16.7 cm^-1 ~= 2.1 meV)
+  --instrument-broadening-width <broadening>
+                        Instrument broadening width in --output-units (default: no broadening).
+  --instrument-broadening-shape <lineshape>
+                        Instrument broadening shape ('gaussian' or 'lorentzian'; default: 'gaussian')
+
+Polarised Raman:
+  --surface <h> <k> <l>
+                        Miller indices of the crystal surface to rotate to the z axis of the instrument frame
+  --theta <theta> [<theta_2>, ...]
+                        Optionally, specify one or more rotation angles in the xy plane of the instrument frame (i.e. about the z axis) **in
+                        degrees**
+  --theta-step <step>   If not specifying a theta with the --theta argument the spectrum will be simulated between 0 -> 360 deg and --theta-step
+                        specifies the step (default: 2.5 deg)
+  --incident-pol <pol>  Polarisation of incident light (possible values: 'x', 'y', or an (x, y) vector; default: 'x'
+  --scattered-pol <pol>
+                        Polarisation of scattered light (possible values: 'parallel', 'cross', 'x', 'y', or an (x, y) vector; default:
+                        'parallel')
+
+Data output:
+  -o <prefix>, --output-prefix <prefix>
+                        Prefix for output files (default: None)
+  --data-format dat | csv
+                        Format for plain-text output files ('dat' or 'csv'; default: 'dat')
+  --output-units < thz | inv_cm | mev | um >
+                        Output measurement units ('thz', 'inv_cm' or 'mev'; default: 'inv_cm')

@@ -8,7 +8,7 @@
     ibrav = 0
     nat = 2
     ntyp = 2
-    ecutwfc = 70.0
+    ecutwfc = 50.0
  /
  &electrons
     diagonalization = 'david'

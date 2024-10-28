@@ -1,0 +1,23 @@
+ &control
+    calculation = 'scf'
+    pseudo_dir = '/home/apparelixetsy/Raman/pp/'
+    tprnfor = .true.
+    tstress = .true.
+ /
+ &system
+    ibrav = 0
+    nat = 2
+    ntyp = 2
+    ecutwfc = 70.0
+ /
+ &electrons
+    diagonalization = 'david'
+    conv_thr = 1.0d-9
+ /
+ATOMIC_SPECIES
+ Si  28.086  Si.pbe-n-kjpaw_psl.1.0.0.UPF
+  B  10.811  B.pbe-n-kjpaw_psl.1.0.0.UPF
+K_POINTS automatic
+ 2 2 2  1 1 1
+
+ 

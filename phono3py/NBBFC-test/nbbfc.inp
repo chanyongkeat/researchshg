@@ -19,7 +19,7 @@
       MULTIPLICITY 1
       WFN_RESTART_FILE_NAME NBBFC-RESTART.wfn 
       &SCF
-         MAX_SCF 500
+         MAX_SCF 20
          EPS_SCF 1e-06
          SCF_GUESS RESTART
          &PRINT

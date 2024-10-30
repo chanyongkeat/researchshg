@@ -13,20 +13,20 @@
       CHARGE 0
       MULTIPLICITY 1
       &SCF
-         MAX_SCF 500
+         MAX_SCF 20
          EPS_SCF 1e-06
          &PRINT
             &RESTART 
             &END RESTART
          &END PRINT
-         &MIXING
-            METHOD BROYDEN_MIXING
-            ALPHA 0.4
-            NBUFFER 8
-         &END MIXING
-         &DIAGONALIZATION
-            ALGORITHM STANDARD
-         &END DIAGONALIZATION
+         &OT  
+           MINIMIZER  DIIS
+           PRECONDITIONER  FULL_SINGLE_INVERSE
+         &END OT
+         &OUTER_SCF  
+           EPS_SCF  1E-06
+           MAX_SCF  20
+         &END OUTER_SCF
       &END SCF
       &MGRID
          CUTOFF 600.0

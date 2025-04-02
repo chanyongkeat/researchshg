@@ -144,7 +144,7 @@
         &END SCREENING
         &INTERACTION_POTENTIAL
           POTENTIAL_TYPE TRUNCATED
-          CUTOFF_RADIUS  5.8 #Cutoff radius (Angstrom) for truncated 1/r Coulomb operator
+          CUTOFF_RADIUS  6.0 #Cutoff radius (Angstrom) for truncated 1/r Coulomb operator
         &END INTERACTION_POTENTIAL
         &MEMORY
           MAX_MEMORY 3000 #Memory(MB) per MPI process for calculating HF exchange

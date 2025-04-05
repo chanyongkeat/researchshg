@@ -66,10 +66,10 @@
       ABC [angstrom]  4.479968 4.479968 22.921584
       PERIODIC XYZ #Direction(s) of applied PBC (geometry aspect)
       ALPHA_BETA_GAMMA [deg] 90 90 120
-      MULTIPLE_UNIT_CELL 2 2 1
+      MULTIPLE_UNIT_CELL 3 3 1
     &END CELL
     &TOPOLOGY
-      MULTIPLE_UNIT_CELL 2 2 1
+      MULTIPLE_UNIT_CELL 3 3 1
     &END TOPOLOGY
     &COORD
      Be         2.2417533886        3.8753561904        4.6341548864
@@ -171,14 +171,16 @@
       NGRIDS 5
     &END MGRID
     &SCF
-      MAX_SCF 200
-      EPS_SCF 1.0E-05 #Convergence threshold of density matrix of inner SCF
+       MAX_SCF 20
+       EPS_SCF 1e-06
+       SCF_GUESS RESTART
       &OT
         MINIMIZER DIIS
         PRECONDITIONER FULL_SINGLE_INVERSE
       &END OT
       &OUTER_SCF
-        EPS_SCF 1.0e-5
+       EPS_SCF  1E-06
+       MAX_SCF  20
       &END OUTER_SCF
     &END SCF
   &END DFT

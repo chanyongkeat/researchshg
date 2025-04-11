@@ -1,3 +1,4 @@
+#### remember change total step value #######
 &EXT_RESTART
  EXTERNAL_FILE NBBFC-1.restart 
 &END

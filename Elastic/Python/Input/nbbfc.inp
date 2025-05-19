@@ -30,18 +30,18 @@
       PSOLVER  PERIODIC         ! Type of solver
     &END POISSON
     &SCF
-      MAX_SCF 20
+      MAX_SCF 200
       EPS_SCF 1.0E-06 
       IGNORE_CONVERGENCE_FAILURE .TRUE.
       SCF_GUESS RESTART 
-      &OT
-        MINIMIZER DIIS
-        PRECONDITIONER FULL_KINETIC
-      &END OT
-      &OUTER_SCF
-       EPS_SCF  1E-06
-       MAX_SCF  20
-      &END OUTER_SCF
+      &DIAGONALIZATION
+        ALGORITHM STANDARD #Algorithm for diagonalization
+      &END DIAGONALIZATION
+      &MIXING #How to mix old and new density matrices
+        METHOD BROYDEN_MIXING #PULAY_MIXING is also a good alternative
+        ALPHA 0.4 #Default. Mixing 40% of new density matrix with the old one
+        NBROYDEN 8 #Default is 4. Number of previous steps stored for the actual mixing scheme
+      &END MIXING
       &PRINT
         &RESTART #Note: Use "&RESTART OFF" can prevent generating .wfn file
           BACKUP_COPIES 0 #Maximum number of backup copies of wfn file. 0 means never
